@@ -302,10 +302,10 @@ void displayALUStatus() {
   display.drawLine(21, 10, 42, 42, SSD1306_WHITE);    // Left side
   display.drawLine(107, 10, 86, 42, SSD1306_WHITE);   // Right side
   
-  // "BLU" centered in trapezoid
+  // "ALU" centered in trapezoid
   display.setTextSize(2);
   display.setCursor(52, 20);
-  display.print("BLU");
+  display.print("ALU");
   
   // B_REG above left side
   display.setTextSize(1);
