@@ -476,15 +476,15 @@ void sendALUResult() {
   Serial.println();
 }
 
-void onDataReceive(const esp_now_recv_info *recv_info, const uint8_t *incomingData, int len) {
+void onDataReceive(const uint8_t *mac_addr, const uint8_t *incomingData, int len) {
   struct_message receivedData;
   memcpy(&receivedData, incomingData, sizeof(receivedData));
-  
+
   char macStr[18];
   sprintf(macStr, "%02X:%02X:%02X:%02X:%02X:%02X",
-          recv_info->src_addr[0], recv_info->src_addr[1],
-          recv_info->src_addr[2], recv_info->src_addr[3],
-          recv_info->src_addr[4], recv_info->src_addr[5]);
+          mac_addr[0], mac_addr[1],
+          mac_addr[2], mac_addr[3],
+          mac_addr[4], mac_addr[5]);
   
   bool shouldRespond = false;
   
